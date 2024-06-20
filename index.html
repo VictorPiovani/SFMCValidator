@@ -5,13 +5,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background-color: #f0f4f8;
             margin: 0;
             padding: 20px;
         }
         h1 {
             text-align: center;
-            color: #333;
+            color: #2c3e50;
         }
         form {
             max-width: 600px;
@@ -23,14 +23,17 @@
         }
         div {
             margin-bottom: 15px;
+            display: flex;
+            align-items: center;
         }
         label {
-            display: block;
+            flex: 1;
             margin-bottom: 5px;
             font-weight: bold;
+            color: #2c3e50;
         }
-        input[type="text"], input[type="date"], input[type="checkbox"] {
-            width: calc(100% - 20px);
+        input[type="text"], input[type="date"], input[type="checkbox"], input[type="email"] {
+            flex: 2;
             padding: 8px;
             margin: 5px 0;
             border: 1px solid #ccc;
@@ -42,7 +45,7 @@
             margin-right: 10px;
         }
         button {
-            background-color: #28a745;
+            background-color: #e67e22;
             color: white;
             padding: 10px 15px;
             border: none;
@@ -51,13 +54,25 @@
             font-size: 16px;
         }
         button:hover {
-            background-color: #218838;
+            background-color: #d35400;
         }
     </style>
 </head>
 <body>
     <h1>Validação de Jornadas</h1>
     <form id="validation-form">
+        <div>
+            <label for="us">US:</label>
+            <input type="text" id="us" name="us" required>
+        </div>
+        <div>
+            <label for="nome_email">Nome e Email:</label>
+            <input type="email" id="nome_email" name="nome_email" required>
+        </div>
+        <div>
+            <label for="nome_jornada">Nome da Jornada:</label>
+            <input type="text" id="nome_jornada" name="nome_jornada" required>
+        </div>
         <div>
             <label for="executor">Nome do Executor:</label>
             <input type="text" id="executor" name="executor" required>
