@@ -2,6 +2,58 @@
 <html>
 <head>
     <title>Validação de Jornadas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        div {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="date"], input[type="checkbox"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
     <h1>Validação de Jornadas</h1>
@@ -18,7 +70,6 @@
             <label for="validationDate">Data de Validação:</label>
             <input type="date" id="validationDate" name="validationDate" required>
         </div>
-
         <div>
             <input type="checkbox" id="ampscript" name="ampscript">
             <label for="ampscript">ampscript</label>
@@ -51,7 +102,6 @@
             <input type="checkbox" id="address" name="address">
             <label for="address">endereço</label>
         </div>
-
         <button type="button" onclick="submitForm()">Enviar</button>
     </form>
 
