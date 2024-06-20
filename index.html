@@ -36,7 +36,7 @@
             font-weight: bold;
             color: #2c3e50;
         }
-        input[type="text"], input[type="date"], input[type="checkbox"], input[type="email"] {
+        input[type="text"], input[type="date"], input[type="email"] {
             flex: 2;
             padding: 8px;
             margin: 5px 0;
@@ -44,7 +44,12 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
-        input[type="checkbox"] {
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+        .checkbox-container input[type="checkbox"] {
             width: auto;
             margin-right: 10px;
         }
@@ -96,35 +101,35 @@
             <label for="validationDate">Data de Validação:</label>
             <input type="date" id="validationDate" name="validationDate" required>
         </div>
-        <div>
+        <div class="checkbox-container">
             <input type="checkbox" id="ampscript" name="ampscript">
             <label for="ampscript">ampscript</label>
         </div>
-        <div>
+        <div class="checkbox-container">
             <input type="checkbox" id="customizations" name="customizations">
             <label for="customizations">customizações</label>
         </div>
-        <div>
+        <div class="checkbox-container">
             <input type="checkbox" id="opentracking" name="opentracking">
             <label for="opentracking">opentracking</label>
         </div>
-        <div>
+        <div class="checkbox-container">
             <input type="checkbox" id="images" name="images">
             <label for="images">imagens</label>
         </div>
-        <div>
+        <div class="checkbox-container">
             <input type="checkbox" id="links" name="links">
             <label for="links">links</label>
         </div>
-        <div>
+        <div class="checkbox-container">
             <input type="checkbox" id="web_view" name="web_view">
             <label for="web_view">web_view</label>
         </div>
-        <div>
+        <div class="checkbox-container">
             <input type="checkbox" id="profile_center" name="profile_center">
             <label for="profile_center">profile_center</label>
         </div>
-        <div>
+        <div class="checkbox-container">
             <input type="checkbox" id="address" name="address">
             <label for="address">endereço</label>
         </div>
