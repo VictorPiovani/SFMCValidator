@@ -64,19 +64,26 @@
                 data[key] = value;
             });
 
-            fetch('https://script.google.com/macros/s/AKfycbyuYcPDMPqOk6XOQlhOYyBfs1lI-lMoYWAmxKuRSWZzD2JGUWH1phn1rXpJw5N0yw-l/exec', {
+            fetch('https://sfmctracker.victorpiovani.workers.dev/', {
                 method: 'POST',
                 mode: 'cors',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(data)
-            }).then(response => response.json())
+            }).then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
                 console.log('Success:', data);
+                alert('Dados enviados com sucesso!');
             })
             .catch((error) => {
                 console.error('Error:', error);
+                alert('Erro ao enviar os dados. Por favor, tente novamente.');
             });
         }
     </script>
