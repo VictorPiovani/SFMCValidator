@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validação de Jornadas</title>
+</head>
+<body>
+    <h1>Validação de Jornadas</h1>
+    <form id="validation-form">
+        <div>
+            <label for="executor">Nome do Executor:</label>
+            <input type="text" id="executor" name="executor" required>
+        </div>
+        <div>
+            <label for="validator">Nome do Validador:</label>
+            <input type="text" id="validator" name="validator" required>
+        </div>
+        <div>
+            <label for="validationDate">Data de Validação:</label>
+            <input type="date" id="validationDate" name="validationDate" required>
+        </div>
+
+        <div>
+            <input type="checkbox" id="ampscript" name="ampscript">
+            <label for="ampscript">ampscript</label>
+        </div>
+        <div>
+            <input type="checkbox" id="customizations" name="customizations">
+            <label for="customizations">customizações</label>
+        </div>
+        <div>
+            <input type="checkbox" id="opentracking" name="opentracking">
+            <label for="opentracking">opentracking</label>
+        </div>
+        <div>
+            <input type="checkbox" id="images" name="images">
+            <label for="images">imagens</label>
+        </div>
+        <div>
+            <input type="checkbox" id="links" name="links">
+            <label for="links">links</label>
+        </div>
+        <div>
+            <input type="checkbox" id="web_view" name="web_view">
+            <label for="web_view">web_view</label>
+        </div>
+        <div>
+            <input type="checkbox" id="profile_center" name="profile_center">
+            <label for="profile_center">profile_center</label>
+        </div>
+        <div>
+            <input type="checkbox" id="address" name="address">
+            <label for="address">endereço</label>
+        </div>
+
+        <button type="button" onclick="submitForm()">Enviar</button>
+    </form>
+
+    <script>
+        function submitForm() {
+            const form = document.getElementById('validation-form');
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            fetch('https://your-script-url', {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            }).then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
