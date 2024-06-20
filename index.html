@@ -8,6 +8,8 @@
             background-color: #f0f4f8;
             margin: 0;
             padding: 20px;
+            position: relative;
+            min-height: 100vh;
         }
         h1 {
             text-align: center;
@@ -20,6 +22,8 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
         }
         div {
             margin-bottom: 15px;
@@ -56,6 +60,13 @@
         button:hover {
             background-color: #d35400;
         }
+        .banner {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
@@ -66,7 +77,7 @@
             <input type="text" id="us" name="us" required>
         </div>
         <div>
-            <label for="nome_email">Nome do Email:</label>
+            <label for="nome_email">Nome e Email:</label>
             <input type="email" id="nome_email" name="nome_email" required>
         </div>
         <div>
@@ -119,6 +130,7 @@
         </div>
         <button type="button" onclick="submitForm()">Enviar</button>
     </form>
+    <img src="https://wp.salesforce.com/pt-br/wp-content/uploads/sites/15/2023/01/hp-page-break-img-hills.png" class="banner">
 
     <script>
         function submitForm() {
