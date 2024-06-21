@@ -79,7 +79,19 @@
 <body>
     <img src="https://github.com/VictorPiovani/SFMCValidator/blob/main/LOGO.PNG?raw=true" class="header-image" alt="Validação de Jornadas">
     <form id="validation-form">
-       <div>
+        <div>
+            <label for="us">US:</label>
+            <input type="text" id="us" name="us" required>
+        </div>
+        <div>
+            <label for="nome_email">Nome do Email:</label>
+            <input type="email" id="nome_email" name="nome_email" required>
+        </div>
+        <div>
+            <label for="nome_jornada">Nome da Jornada:</label>
+            <input type="text" id="nome_jornada" name="nome_jornada" required>
+        </div>
+        <div>
             <label for="executor">Nome do Executor:</label>
             <input type="text" id="executor" name="executor" required>
         </div>
@@ -123,18 +135,6 @@
             <input type="checkbox" id="address" name="address">
             <label for="address">Endereço</label>
         </div>
-        <div>
-            <label for="us">US:</label>
-            <input type="text" id="us" name="us" required>
-        </div>
-        <div>
-            <label for="nome_email">Nome do Email:</label>
-            <input type="email" id="nome_email" name="nome_email" required>
-        </div>
-        <div>
-            <label for="nome_jornada">Nome da Jornada:</label>
-            <input type="text" id="nome_jornada" name="nome_jornada" required>
-        </div>
         <button type="button" onclick="submitForm()">Enviar</button>
     </form>
     <img src="https://wp.salesforce.com/pt-br/wp-content/uploads/sites/15/2023/01/hp-page-break-img-hills.png" class="banner">
@@ -147,6 +147,8 @@
             formData.forEach((value, key) => {
                 data[key] = value;
             });
+
+            console.log('Dados enviados:', data); // Log dos dados antes do envio
 
             fetch('https://sfmctracker.victorpiovani.workers.dev/', {
                 method: 'POST',
