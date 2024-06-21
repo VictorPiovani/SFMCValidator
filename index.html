@@ -84,7 +84,7 @@
             <input type="text" id="us" name="us" required>
         </div>
         <div>
-            <label for="nome_email">Nome e Email:</label>
+            <label for="nome_email">Nome do Email:</label>
             <input type="email" id="nome_email" name="nome_email" required>
         </div>
         <div>
@@ -105,35 +105,35 @@
         </div>
         <div class="checkbox-container">
             <input type="checkbox" id="ampscript" name="ampscript">
-            <label for="ampscript">ampscript</label>
+            <label for="ampscript">Ampscript</label>
         </div>
         <div class="checkbox-container">
             <input type="checkbox" id="customizations" name="customizations">
-            <label for="customizations">customizações</label>
+            <label for="customizations">Customizações</label>
         </div>
         <div class="checkbox-container">
             <input type="checkbox" id="opentracking" name="opentracking">
-            <label for="opentracking">opentracking</label>
+            <label for="opentracking">OpenTracking</label>
         </div>
         <div class="checkbox-container">
             <input type="checkbox" id="images" name="images">
-            <label for="images">imagens</label>
+            <label for="images">Imagens</label>
         </div>
         <div class="checkbox-container">
             <input type="checkbox" id="links" name="links">
-            <label for="links">links</label>
+            <label for="links">Links</label>
         </div>
         <div class="checkbox-container">
             <input type="checkbox" id="web_view" name="web_view">
-            <label for="web_view">web_view</label>
+            <label for="web_view">Web_View</label>
         </div>
         <div class="checkbox-container">
             <input type="checkbox" id="profile_center" name="profile_center">
-            <label for="profile_center">profile_center</label>
+            <label for="profile_center">Profile_Center</label>
         </div>
         <div class="checkbox-container">
             <input type="checkbox" id="address" name="address">
-            <label for="address">endereço</label>
+            <label for="address">Endereço</label>
         </div>
         <button type="button" onclick="submitForm()">Enviar</button>
     </form>
@@ -157,7 +157,7 @@
                 body: JSON.stringify(data)
             }).then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error('Conexão cagada');
                 }
                 return response.json();
             })
@@ -167,7 +167,7 @@
             })
             .catch((error) => {
                 console.error('Error:', error);
-                alert('Erro ao enviar os dados. Por favor, tente novamente.');
+                alert('Erro ao exibir erro executado com sucesso!');
             });
         }
     </script>
